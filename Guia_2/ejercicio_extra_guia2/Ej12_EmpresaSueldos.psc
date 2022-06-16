@@ -72,7 +72,7 @@ Algoritmo Ej12_EmpresaSueldos
 				//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 				extras = horas - 40;
 				pagoExtras = extras * 1.50;
-				sueldo = (40 * val_hora) + ;
+				sueldo = (40 * val_hora)  ;
 				Escribir "El sueldo a pagar es : " sueldo;
 			FinSi
 		
