@@ -8,17 +8,19 @@ Algoritmo Ej5_MinimoPromedioMaximo
 	Leer num1;
 	menor=num1;
 	i=0;
-	suma=0;
+	suma=num1;
 	
 	Repetir
-		si num1<menor Entonces
+		si num1 > menor Entonces
 			menor=num1;
 		SiNo
 			mayor=num1
 		FinSi
+		
 		ESCRIBIR "INGRESE NUMERO. Al finalizar ingrese 0";
 		Leer num1;	
 		suma= suma + num1;
+		escribir suma
 		i=i+1;
 	Mientras Que num1 <>0 ;
 	promedio= suma /i;

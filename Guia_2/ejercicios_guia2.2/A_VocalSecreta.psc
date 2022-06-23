@@ -5,12 +5,12 @@
 Algoritmo A_VocalSecreta
 	Definir vocal,vocalSecret Como Caracter;
 	
-	vocalSecret="i"
-	vocal="";
+	vocalSecret<-"I";
+	vocal<-"";
 
 	Mientras vocalSecret<>vocal Hacer
 		Escribir "Adivine la vocal";
-		Leer vocal;
+		Leer vocal;		
 	
 	FinMientras
 

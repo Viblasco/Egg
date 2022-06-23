@@ -1,0 +1,160 @@
+//	Necesitamos crear un sistema para una máquina de reciclaje de botellas automática. Dicha
+//	máquina nos pagará dinero por la cantidad de plástico reciclado. Tenemos que ingresar nuestro
+//	usuario y contraseña para que se nos cargue el saldo por sistema a nuestra cuenta.
+
+//	? Condición simple anidada: validaremos que el usuario sea "Albus_D", luego si esto es
+//	verdadero, validaremos si la contraseña es "caramelosDeLimon". Si la contraseña es correcta
+//	haremos que una variable llamada Login sea verdadera.
+
+//	? Bucle Mientras: Este bloque de validación de la contraseña lo encerraremos en un bucle
+//	Mientras para darle al usuario sólo 3 intentos para poner la contraseña.
+
+//	? Bucle Hacer Mientras(Repetir): Una vez que el login sea verdadero, accederemos al menú de
+//	opciones: "Ingresar botellas", "Consultar saldo" y "Salir"
+
+//	? Ingresar Botellas: Primero preguntaremos cuántas botellas se va a ingresar al sistema. Una vez
+//	que tenemos el número vamos a usar un bucle para, a fin de ir ingresando cada botella. En
+//	cada ciclo del bucle se debe generar un número aleatorio entre 100 y 3000 gr, que va a ser el
+//	peso de las botellas a reciclar (simulando que el usuario está ingresando botellas en la
+//	máquina). Una vez generado, según el peso del material, usaremos un condicional múltiple
+//	para asignarle un valor monetario:
+
+//	? Si es menos de 500 gr, corresponden $50
+
+//	? Si es entre 501 gr y 1500 gr, corresponden $125
+
+//	? Si es más de 1501 gr, corresponden $200
+
+//	? Hecho esto, el programa debe informar al usuario por pantalla el valor que se le ofrece. Si el
+//	usuario acepta, lo acreditamos a su saldo, sino se debe devolver el material (sólo mostrar en
+//	pantalla "Devolviendo material"). Para esto usaremos un condicional doble.
+
+//	? Consultar saldo: revisaremos el valor monetario que tiene asignada la variable "saldo".
+
+//	? Tanto al terminar "Ingresar Botellas" como "Consultar Saldo" debe volver al menú principal.
+
+Algoritmo GUIA22COLAB
+	
+	Definir usuario, contrasena, usaing, contraing Como cadena
+	Definir login Como Logico
+	Definir pesobot Como Real
+	Definir contador, num1, bot1, saldo, i, ok, valbot Como Entero
+	
+	usuario = "A"
+	contrasena = "A"
+	contador = 0
+	Login = Falso
+	saldo = 0
+	valbot = 0
+	ok = 1
+	
+	Escribir "Ingrese el usuario: "
+	leer usaing
+	
+	Si usaing == usuario Entonces
+		Escribir "Ingrese la contraseña: "
+		Leer contraing
+		contador = contador + 1
+			Si contraing = contrasena Entonces
+				Escribir "Usuario y contraseña CORRECTOS"
+				Login = Verdadero
+				Sino 
+					Escribir "Ingrese la contraseña nuevamente: "
+					leer contraing
+					Si contraing <> contrasena Entonces
+						Escribir "Ingrese la contraseña nuevamente: "
+						leer contraing
+						Si contraing <> contrasena Entonces
+							Escribir "Se agotaron los intentos"
+						FinSi
+						Si contraing = contrasena Entonces
+							Escribir "Usuario y contraseña CORRECTOS"
+							Login = Verdadero
+						FinSi
+					FinSi
+	FinSi
+	
+	Sino 
+		Escribir "Ingrese nuevamente el usuario: "
+		leer usaing
+		Si usaing = usuario Entonces
+			Escribir "Ingrese la contraseña: "
+			Leer contraing
+			Si contraing = contrasena Entonces
+				Escribir "Usuario y contraseña CORRECTOS"
+				Login = Verdadero
+				SiNo
+					Mientras contrasena <> contraing y contador < 2 Hacer
+						Escribir "Ingrese la contraseña nuevamente: "
+						leer contraing
+						contador = contador + 1
+						Escribir "Se agotaron los intentos"
+					Si contrasena = contraing
+						Login = Verdadero
+					FinSi
+					FinMientras
+			FinSi
+		FinSi
+	FinSi
+	
+	Si Login = Verdadero Entonces
+		Repetir
+			Repetir
+				Escribir "                    "
+				Escribir "INGRESE UNA OPCION: "
+				Escribir "                    "
+				Escribir "1-INGRESAR BOTELLAS"
+				Escribir "2-CONSULTAR SALDO"
+				Escribir "3-SALIR"
+				leer num1
+			Mientras Que num1 <> 1 Y num1 <> 2 Y num1 <> 3
+			Si num1 = 1 Entonces
+				Escribir "Ingrese la cantidad de botellas: "
+				leer bot1
+				Para i = 0 Hasta bot1 Hacer
+					pesobot = Aleatorio(100, 3000)
+					Si pesobot < 500 Entonces
+						valbot = valbot + 50
+					SiNo
+						Si pesobot > 500 Y pesobot < 1500 Entonces
+							valbot = valbot + 125
+						SiNo
+							Si pesobot>1500 Entonces
+								valbot = valbot + 200
+							FinSi
+						FinSi
+					FinSi
+					Escribir "Las botellas ingresadas " i " pesan: " pesobot " gramos"
+				Fin Para
+				Escribir "El valor total de las botellas es de: $ " valbot " ¿Quiere venderlas ?"
+				Escribir " 1 - Si "
+				Escribir " 2 - No"
+				Leer ok
+				Si ok = 1 Entonces
+					saldo = saldo + valbot
+				SiNo
+					Escribir "Devolviendo Material"
+				FinSi
+			FinSi
+			
+			Si num1 = 2 Entonces
+				Escribir "Su saldo actual es: ", saldo + valbot
+				Mientras num1 = 2 Hacer
+					Escribir "                    "
+					Escribir "INGRESE UNA OPCION: "
+					Escribir "                    "
+					Escribir "1-INGRESAR BOTELLAS"
+					Escribir "2-CONSULTAR SALDO"
+					Escribir "3-SALIR"
+					leer num1
+				FinMientras
+			FinSi
+			
+			Si num1 = 3 Entonces
+				Escribir "Ha finalizado el programa"
+			FinSi
+		Mientras Que num1 = 1 O num1 = 2 O num1 = 3
+	FinSi
+	
+	
+FinAlgoritmo

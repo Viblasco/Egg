@@ -6,12 +6,12 @@
 
 Algoritmo Ej4_longitud4
 	Definir palabra como caracteres;
-	Escribir "Ingrese un cadena de caracteres"
+	Escribir "Ingrese un cadena de caracteres";
 	Leer palabra;
 	SI Longitud(palabra)=4 Entonces
-		Escribir palabra "!";
+		Escribir palabra, "!";
 	SiNo
-		Escribir palabra "?";
+		Escribir palabra,"?";
 	FinSi
 	
 FinAlgoritmo

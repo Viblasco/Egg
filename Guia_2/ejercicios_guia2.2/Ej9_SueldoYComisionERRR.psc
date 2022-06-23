@@ -6,12 +6,37 @@
 //	vendedor ingresar cuanto es su sueldo base, cuantas ventas realizó y cuanto cobró por
 //cada venta. sueldo base +100% comisiones 
 Algoritmo Ej9_SueldoYComision
-	Definir vendedores,ventas como entero;
-	Definir sueldo,comision,pesos_ventas como real;
-  Escribir "Ingrese sueldo basico";
-  leer sueldo;
-  Escribir "Ingrese ventas realizadas";
-  Leer ventas;
+	Definir vendedores,ventas,i,j como entero;
+	Definir sueldo,comision,monto_ventas, suma_ventas como real;
+	i=0;
+	j=1;
+	suma_ventas=0;
+	vendedores=0;
+	//bucle cantidad de vendedores
+	Mientras i <= vendedores Hacer
+		
+	  Escribir "Ingrese sueldo basico";
+	  leer sueldo;
+	  Escribir "Ingrese ventas realizadas";
+	  Leer ventas;
+	  //_______________________________________________________________
+	  //bucle que controla las ventas hechas
+	  Mientras j <= ventas Hacer
+		  Escribir "Ingrese monto de cada ventas";
+		  
+		  Leer monto_ventas;
+		  suma_ventas=suma_ventas + monto_ventas;//cuanto debera pagar a cada vendedor
+		  escribir suma_ventas;
+		  comision=suma_ventas * 0.10;
+		  
+		  j=j+1; 
+		  
+		  
+	  Fin Mientras
+	  Escribir "En la semana debera pagar a este vendedor $" comision " en comision";
+	  Escribir "En la semana debera pagar a este vendedor $" comision + sueldo " en comision + sueldo basico";
+	  i=i+1;
+  Fin Mientras
   
 	
 	

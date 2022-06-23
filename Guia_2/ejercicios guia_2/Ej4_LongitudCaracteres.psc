@@ -5,7 +5,7 @@
 //Nota: investigar la función Longitud() de PseInt.
 Algoritmo Ej4_cadenaLongitud
 	Definir palabra como caracteres;
-	Escribir "Ingrese un cadena de caracteres"
+	Escribir "Ingrese un cadena de caracteres";
 	Leer palabra;
 	SI Longitud(palabra)=6 Entonces
 		Escribir "CORRECTO";

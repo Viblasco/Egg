@@ -5,8 +5,8 @@
 Algoritmo Ej6_cuadradoDeNaturales
 	
 	Definir i como entero;
-	Para i<-1 Hasta 8 Con Paso 1 Hacer
-		Escribir i " elevado al cuadrado es igual a " i^2;
-	Fin Para
+	Para i<-1 Hasta 9 Con Paso 1 Hacer
+		Escribir i ," elevado al cuadrado es igual a " ,i^2;
+	FinPara
 	
 FinAlgoritmo
