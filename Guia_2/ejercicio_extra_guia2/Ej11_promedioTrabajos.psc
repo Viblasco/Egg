@@ -4,28 +4,28 @@
 //de un estudiante.
 
 Algoritmo Ej11_promedioTrabajos
-	Definir nota1,nota2,nota3,nota4, menor, promedio Como Entero;
+	Definir nota1,nota2,nota3,nota4, menor, promedio Como Real;
 	Escribir "Ingrese las notas del alumno del 1 al 10";
 	Leer nota1,nota2,nota3,nota4;
 	
 	Si (nota1 < nota2) Y (nota1 < nota3) Y (nota1<nota4) Entonces
-		menor=nota1;
+		menor<-nota1;
 		
 	SiNo 
 		Si (nota2 < nota1) Y (nota2 < nota3) Y (nota2<nota4) Entonces
-			menor=nota2;
+			menor<-nota2;
 		SiNo
 			Si (nota3 < nota1) Y (nota3 < nota4) Y (nota3<nota2) Entonces
-				menor=nota3;
+				menor<-nota3;
 			SiNo
-				menor= nota4
+				menor<- nota4;
 			FinSi
 		FinSi
 		
 	FinSi
-	promedio= (nota1+nota2+nota3+nota4-menor)/3;
-	Escribir "El promedio del alumno es; " promedio;
-	escribir menor
+	promedio<-(nota1+nota2+nota3+nota4-menor)/3;
+	Escribir "El promedio del alumno es; ", promedio;
+	escribir menor;
 	
 	
 FinAlgoritmo
