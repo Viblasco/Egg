@@ -3,15 +3,15 @@
 //	función Subcadena().
 
 Funcion rtaLetra<-BuscarLetra(palabra,letra)
-	Definir rtaLetra,i,j como entero;
+	Definir rtaLetra,i como entero;
 	rtaletra<-0;
-	Para i<-0 Hasta Longitud(palabra) Con Paso 1 Hacer
+	Para i<- 0 Hasta Longitud(palabra) Con Paso 1 Hacer
 		
-		Para j<-0 Hasta Longitud(palabra)  Con Paso 1 Hacer
-			si subcadena(palabra,i,j)=letra entonces
+		
+			si subcadena(palabra,i,i)=letra entonces
 				rtaLetra<-rtaLetra+1;
 			FinSi
-		FinPara
+	
 		 
 	FinPara
 	
@@ -25,8 +25,6 @@ Proceso Ej4_rtaLetra
 	Escribir "Ingrese letra a buscar";
 	leer letra;
 	letra<-Mayusculas(letra);
-	Escribir "El texto tiene ", BuscarLetra(palabra,letra), " letras ", letra;
-
-	
+	Escribir "El texto tiene ", BuscarLetra(palabra,letra), " letras ", letra;	
 	
 FinProceso

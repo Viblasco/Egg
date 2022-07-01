@@ -1,0 +1,209 @@
+//Crea un procedimiento "convertirEspaciado", que reciba como argumento un texto y muestra
+//una cadena con un espacio adicional tras cada letra.
+//Por ejemplo, "Hola, tú" devolverá "H o l a , t ú ". Crea un programa principal donde se use
+//dicho procedimiento.
+//
+
+SubProceso convertirEspaciado(text)
+	Definir i Como Entero
+	Definir letra Como Caracter
+	
+	si text <> "" Entonces
+		Escribir ""
+		Para i = 0 Hasta Longitud(text)-1 Hacer
+			letra = Subcadena(text,i,i)
+			si letra <> " " Entonces
+				Escribir letra," " Sin Saltar
+			FinSi
+		FinPara
+		Escribir ""
+	FinSi
+	
+FinSubProceso
+
+
+
+
+
+Algoritmo sin_titulo
+	
+	Definir text Como Caracter
+	
+	Escribir "Ingresar cadena"
+	leer text
+	
+	convertirEspaciado(text)
+	
+FinAlgoritmo
+
+
+====================================================
+
+//Realizar un subproceso que reciba una letra y muestre un mensaje si esa letra esta entre las
+//		letras "M" y "T". Recordar que Pseint le da un valor numérico a cada letra a través del Código
+//		Ascii, lo que nos deja usar operadores relacionales con letras y cadenas.
+		
+
+SubProceso entreMYT(letra)
+
+	si letra <= "T" y letra >= "M" Entonces
+		Escribir "La letra se encuentra entre la M y la T"
+	SiNo
+		Escribir "La letra no se encuentra entre la M y la T"
+	FinSi
+	
+FinSubProceso
+
+
+
+
+
+Algoritmo sin_titulo
+	
+	Definir letra Como Caracter
+	
+	Escribir "Ingresar una letra"
+	leer letra
+	letra = Mayusculas(letra)
+
+	entreMYT(letra)
+FinAlgoritmo
+
+=================================================
+
+
+//Crear un programa que dibuje una escalera de números, donde cada línea de números
+//comience en uno y termine en el número de la línea. Solicitar la altura de la escalera al usuario
+//al comenzar. Ejemplo: si se ingresa el número 3:
+//			1
+//12
+//123
+//		
+SubProceso piramide(altura)
+	Definir i,j Como Entero
+	
+	Para i = 1 Hasta  altura
+		para j = 1 Hasta i
+			Escribir j Sin Saltar
+		FinPara
+		Escribir ""
+	FinPara
+	
+FinSubProceso
+
+
+Algoritmo sin_titulo
+	
+	Definir altura Como Entero
+	
+	Escribir "Ingresar altura"
+	leer altura
+	
+	piramide(altura)
+	
+FinAlgoritmo
+
+
+
+===============================================
+
+//Ejemplo por referencia
+
+
+
+
+SubProceso minimo(num,min Por Referencia)
+	si num < min Entonces
+		min = num
+	FinSi
+	
+FinSubProceso
+
+
+Algoritmo sin_titulo
+	Definir num,min Como Entero
+	min = 99999
+	
+	Escribir "Ingresar numeros"
+	leer num
+	
+	Mientras num <> 0 Hacer
+		minimo(num,min)
+		Escribir "Ingresar numeros"
+		leer num
+	FinMientras
+	Escribir min
+FinAlgoritmo
+
+
+============================================
+
+
+//Crear un programa que calcule la suma de los enteros positivos pares desde N hasta 2.
+//Chequear que si N es impar se muestre un mensaje de error.
+
+
+
+Funcion total = suma(num)
+	Definir total Como Entero
+	total = 0
+	si num MOD 2 = 0 entonces
+		
+		si num <> 2 Entonces
+			total = num + suma(num-2)
+			Escribir total
+		SiNo
+			total = 2
+		FinSi
+		
+	FinSi
+
+
+FinFuncion
+
+
+Algoritmo sin_titulo
+	Definir num,total Como Entero
+	Escribir "Ingresar el numero"
+	leer num
+	total = suma(num)
+	Escribir "El numero total es ",total
+	
+	
+FinAlgoritmo
+
+
+
+=====================================================
+
+//Implemente de forma recursiva una función que le dé la vuelta a una cadena de caracteres.
+//NOTA: Si la cadena es un palíndromo, la cadena y su inversa coincidirán.
+
+
+Funcion palidromiacos(palabra,i,j)
+
+	Definir letra Como Caracter
+	si i <= Longitud(palabra)
+		letra = Subcadena(palabra,j-i,j-i)
+		
+	Escribir letra Sin Saltar
+	palidromiacos(palabra,i+1,j)
+	FinSi
+FinFuncion
+
+
+Algoritmo sin_titulo
+	Definir i,j Como enteros
+	Definir palabra Como Caracter
+	
+	Escribir "Ingrese la palabra"
+	leer palabra
+	i = 0
+	j = Longitud(palabra)-1
+	Escribir ""
+	palidromiacos(palabra,i,j)	
+	Escribir ""
+FinAlgoritmo
+
+
+

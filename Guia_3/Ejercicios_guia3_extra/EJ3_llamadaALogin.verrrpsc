@@ -1,0 +1,30 @@
+//Crear una función llamada "Login", que recibe un nombre de usuario y una contraseña y que
+//devuelve Verdadero si el nombre de usuario es "usuario1" y si la contraseña es "asdasd".
+//		Además, la función calculara el número de intentos que se ha usado para loguearse, tenemos
+//			solo 3 intentos, si nos quedamos sin intentos la función devolverá Falso.
+
+
+Funcion loginrta <- login(usu,clav)
+	Definir loginrta como logico;
+	Definir i como entero;
+	
+	i<-3;
+	
+	Mientras usu <> "usuario1" Y clav <>"asdasd"  Hacer
+		Escribir "Ingrese usuario o clave correctos. Tiene ", i ," intentos" ;
+	    leer usu;
+		leer clav;
+		i<-i-1;
+	FinMientras
+
+	
+FinFuncion
+Proceso EJ3_llamadaALogin
+	Definir usu, clav como caracter;
+	DEfinir logic como logico;
+	logic<-login(usu, clav);
+	
+	escribir "su usuario y/o clave son :" , logic;
+	
+	
+FinProceso

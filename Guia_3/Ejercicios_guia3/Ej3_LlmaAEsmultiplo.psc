@@ -3,10 +3,8 @@
 //	múltiplo del segundo, sino es múltiplo que devuelva falso.
 Funcion rtamultiplo<- EsMultiplo(num1,num2)
 	Definir rtaMultiplo como logico;
-	si num1 mod num2 = 0 Entonces
+	si (num1 mod num2) = 0 Entonces
 		rtaMultiplo<-verdadero;
-	SiNo
-		rtaMultiplo<-falso;
 	FinSi
 FinFuncion
 
