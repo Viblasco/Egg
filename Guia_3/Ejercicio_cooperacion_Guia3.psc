@@ -46,7 +46,7 @@ FinSubProceso
 			arena = superficie * 0.115
 			ladrillos = superficie * 120
 			escribir "Usted necesitara ", cemento " kg de cemento ", arena " m3 de arena y ",ladrillos " ladrillos"
-			sino
+		sino
 			si espesor = 20 entonces
 				cemento = superficie * 10.9
 				arena = superficie * 0.09
@@ -56,7 +56,7 @@ FinSubProceso
 				escribir "valor incorrecto"
 				
 			FinSi
-			finsi
+		finsi
 	FinSubProceso
     funcion retornar<- calcularSuperficie (largo,alto)
 		definir retornar Como Real
@@ -137,7 +137,7 @@ subproceso calculoIluminacion (eleccion por valor)
 	definir superficie Como Real
 	Escribir "Ingrese la superficie"
 	leer superficie
-	Escribir "Usted va a necesitar: ",superficie * 0.20 " m3 de superficie para iluminación"
+	Escribir "Usted va a necesitar: ",superficie * 0.20 " m3 de superficie para iluminación";
 FinSubProceso
 
 

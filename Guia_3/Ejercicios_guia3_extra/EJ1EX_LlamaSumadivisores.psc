@@ -15,7 +15,7 @@ Proceso EJ1EX_LlamaSumadivisores
 	Definir N,suma como entero;
 	Escribir "Ingrese numero";
 	Leer N;
-	suma<-Divisores(N);
+	suma<-divisores(N);
 	
 	Escribir "La suma de todos los divisores es: ", suma ;
 FinProceso

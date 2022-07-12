@@ -8,23 +8,37 @@ Funcion loginrta <- login(usu,clav)
 	Definir loginrta como logico;
 	Definir i como entero;
 	
-	i<-3;
+	i<-1;
 	
-	Mientras usu <> "usuario1" Y clav <>"asdasd"  Hacer
-		Escribir "Ingrese usuario o clave correctos. Tiene ", i ," intentos" ;
-	    leer usu;
-		leer clav;
-		i<-i-1;
-	FinMientras
-
+	si  usu="usuario1" Y clav="asdasd" Entonces
+		loginrta<-verdadero;
+	SiNo
+		Mientras i<3 Hacer
+			Escribir "usuario y clave correctos";
+			Leer usu;
+			leer clav;
+			i<-i+1;
+		FinMientras
+		
+	FinSi
+	
+	
+	
+	
+	
+	
 	
 FinFuncion
-Proceso EJ3_llamadaALogin
+
+Proceso EJ3EX_llamadaALogin
 	Definir usu, clav como caracter;
-	DEfinir logic como logico;
-	logic<-login(usu, clav);
+	DEfinir logic como logico;	
 	
-	escribir "su usuario y/o clave son :" , logic;
+	Escribir "Ingrese usuario o clave" ;
+	leer usu;
+	leer clav;
+	logic<-login(usu, clav);
+	escribir "su usuario y/o clave son :" , (logic);
 	
 	
 FinProceso

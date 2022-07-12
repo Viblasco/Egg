@@ -1,0 +1,221 @@
+//El algoritmo principal sólo debe llamar al subPrograma menu()
+//Cada subPrograma puede descomponerse, si hiciera falta, en otros subProgramas a
+//creatividad del programador
+//El menú debe quedar de la siguiente manera:
+//		1 - Calcular muro de ladrillo
+//		2 - Calcular viga de hormigón
+//		3 - Calcular columnas de hormigón
+//		4 - Calcular contrapisos
+//		5 - Calcular techo
+//		6 - Calcular pisos
+//		7 - Calcular pintura
+//		8 - Calcular iluminación
+//		9 - Salir
+Algoritmo Repaso_guia_3
+	menu()
+FinAlgoritmo
+
+SubProceso menu()
+	Definir opcionMenu Como Entero
+	Escribir "Elige la opción que necesites: "
+	Escribir ""
+	Escribir "1 - Calcular muro de ladrillo"
+	Escribir "2 - Calcular viga de hormigón"
+	Escribir "3 - Calcular columnas de hormigón"
+	Escribir "4 - Calcular contrapisos"
+	Escribir "5 - Calcular techo"
+	Escribir "6 - Calcular pisos"
+	Escribir "7 - Calcular pintura"
+	Escribir "8 - Calcular iluminación"
+	Escribir "9 - Salir"
+	Leer opcionMenu
+
+	Segun opcionMenu Hacer
+		1:
+			calcularMuro()
+//		2:
+//			secuencia_de_acciones_2
+//		3:
+//			secuencia_de_acciones_3
+//		4:
+//			secuencia_de_acciones_1
+//		5:
+//			secuencia_de_acciones_2
+//		6:
+//			secuencia_de_acciones_3
+//		7:
+//		opcion_7encia_de_acciones_2
+//		8:
+//			secuencia_de_acciones_3
+//		9:
+//			secuencia_de_acciones_3
+		De Otro Modo:
+			Escribir "Opción no valida"
+	Fin Segun
+	
+FinSubProceso
+//subprogramas calcularSuperficie y calcularVolumen
+//Haremos ambos para usarlos dentro de los otros subprogramas. El usuario no puede
+//acceder a ellos.
+Funcion superficie = calcularSuperficie(alto, largo)
+	Definir superficie Como Real
+		superficie = alto * largo
+FinFuncion
+
+Funcion  volumen = calcularVolumen(alto, largo, espesor)
+	Definir volumen Como Real
+		volumen = alto * largo * espesor
+FinFuncion
+
+//subprograma calcularMuro
+//Nos debe pedir primero si el muro será de 20 o 30 cm de espesor. Luego el largo y el alto. A
+//partir de estos datos se debe mostrar al usuario la superficie del muro y la cantidad de
+//materiales que necesitaremos para construirlo.
+//Si el muro es de 30cm necesitaremos por metro cuadrado: 15.2 kg de cemento, 0.115 m3
+//de arena y 120 ladrillos.
+//Si el muro es de 20cm necesitaremos por metro cuadrado: 10.9 kg de cemento, 0.09 m3 de
+//arena y 90 ladrillos.
+
+SubProceso calcularMuro ()
+	Definir espesor Como entero
+	Definir largo, alto, cemento, arena, ladrillos Como Real
+	
+	Escribir "El muro será de 20 o 30 cm de espesor"
+	Leer espesor
+	Escribir "Ingrese el largo y alto del muro"
+	Leer largo, alto
+	
+	Si espesor == 20 Entonces			
+		cemento = calcularSuperficie(alto, largo) * 10.9 //Se calcula la cantidad de cemento espesor 20cm
+		arena = calcularSuperficie(alto, largo) * 0.09 //Se calcula la cantidad de arena espesor 20cm
+		ladrillos = calcularSuperficie(alto, largo) * 90 //Se calcula la cantidad de ladrillos espesor 20cm
+		Escribir "Si el muro es de 20cm necesitaremos por metro cuadrado: " cemento," kg de cemento " arena, " m^3 "  
+		Escribir"de arena y"  ladrillos," ladrillos"
+	SiNo 
+		si espesor == 30 Entonces		
+		cemento = calcularSuperficie(alto, largo) * 15.2 //Se calcula la cantidad de cemento espesor 30cm
+		arena = calcularSuperficie(alto, largo) * 0.115 //Se calcula la cantidad de arena espesor 30cm
+		ladrillos = calcularSuperficie(alto, largo) * 120 //Se calcula la cantidad de ladrillos espesor 30cm
+		Escribir "Si el muro es de 30cm necesitaremos por metro cuadrado: " cemento," kg de cemento " arena, " m^3 "  
+		Escribir"de arena y "  ladrillos," ladrillos"
+		FinSi
+	FinSi
+FinSubProceso
+
+//subprograma calcularViga
+//Nos debe pedir el largo de la viga. Por metro lineal de viga se necesitarán: 9 kg de cemento,
+//	0.02 m3 de arena, 0.02 m2 de piedra, 4 m de hierro del 8 y 3 m de hierro del 4.
+//	Debemos mostrar al usuario la cantidad de materiales necesaria.
+
+SubProceso calcularViga()
+	Definir largo Como Real
+	Escribir "Ingrese largo de la viga:"
+	Leer largo;
+	Escribir "Los materiales necesarios son: " largo * 9 " Kg de cemento, " largo * 0.02 " m3 de arena, " largo * 0.02 " m2"
+	Escribir " de piedra, " largo * 4 " m de hierro del 8 y " largo * 3 " m de hierro del 4."
+FinSubProceso
+
+//subprograma calcularColumna
+//Nos debe pedir el largo de la columna. Por metro lineal de columna se necesitarán: 7.5 kg
+//de cemento, 0.016 m3 de arena, 0.016 m2 de piedra, 6 m de hierro del 10 y 3 m de hierro
+//del 4.
+//Debemos mostrar al usuario la cantidad de materiales necesaria.
+
+SubProceso calcularColumna()
+Definir m Como Entero
+Escribir "ingrese los metros de la columna"
+Leer m
+Definir cemento,arena,piedra,hierro1,hierro2 Como Real
+
+cemento=7.5*m
+arena=0.016*m
+piedra=0.016*m
+hierro1=6*m
+hierro2=3*m
+
+Escribir "para hacer una columna de  " m "m se necesitan " cemento " de cemento " arena " de arena " piedra " de piedra " hierro1 " de hierro del 10" 	hierro2 "de hierro del 4"
+
+FinSubProceso
+
+//subprograma calcularContrapisos
+//Nos debe pedir espesor, ancho y largo del contrapiso a calcular.
+//Por metro cúbico de contrapiso se necesita: 105 kg de cemento, 0.45 m3 de arena y 0.9 m3
+//de piedra.
+//Debemos mostrar al usuario la cantidad de materiales necesaria.
+
+SubProceso calcularContrapisos()
+	Definir espesor,largo,ancho,m3 como real;
+	Escribir " ingrese espesor del contrapiso";
+	Leer espesor;
+	Escribir " ingrese largo del contrapiso";
+	Leer largo;
+	Escribir " ingrese ancho del contrapiso";
+	Leer ancho;
+	
+	m3<-calcularVolumen(ancho,largo,espesor);
+	Escribir 'La cantidad de elementos a utilizar son:';
+	Escribir 'CEMENTO: ',105*m3,' Kg';
+	Escribir 'ARENA: ',0.45 *m3,' m3';
+	Escribir 'PIEDRA: ',0.9 *m3,' m3';
+	
+FinSubProceso
+
+
+//subprograma calcularTecho
+//Nos debe pedir espesor, ancho y largo del techo a calcular.
+//Por metro CUBICO cuadrado de techo se necesita: 33 kg de cemento, 0.072 m3 de arena, 0.072 m3
+//de piedra, 7 m de hierro del 8 y 4 m de hierro del 6
+//Debemos mostrar al usuario la cantidad de materiales necesaria.
+
+
+SubProceso calcularTecho ()
+	Definir espesor Como entero
+	Definir largo, alto, cemento, arena, cantidadHIerro8, cantidadHIerro6 Como Real
+	
+	Escribir "Ingrese el espesor del techo"
+	Leer espesor
+	Escribir "Ingrese el ancho del techo"
+	Leer alto
+	Escribir "Ingrese el largo y del techo"
+	Leer largo
+	
+			
+		cemento = calcularVolumen(alto, largo,espesor) * 33 //Se calcula la cantidad de cemento 
+		arena = calcularVolumen( alto, largo, espesor) * 0.072 //Se calcula la cantidad de arena 
+		piedra = calcularVolumen(alto, largo,espesor) * 0.072 //Se calcula la cantidad de piedra
+		
+		cantidadHIerro8 =calcularVolumen(alto, largo,espesor) * 7 
+		cantidadHIerro6 =calcularVolumen(alto, largo,espesor) * 4
+		Escribir "Si el muro es de" espesor,  " y " alto,"de ancho" " necesitaremos por metro cuadrado: " cemento," kg de cemento " arena, " m^3 "  
+		Escribir"de arena y "  piedra," m^3 piedra y la cantidad de hierro de 8 y 6 son " cantidadHIerro8, cantidadHIerro6 " respectivamente"
+			
+		
+FinSubProceso
+
+SubProceso calcularPisos()
+	Definir largo,ancho,m2 como real;
+	Escribir " ingrese ancho del piso";
+	Leer ancho;
+	Escribir " ingrese largo del piso";
+	Leer largo;
+	
+	m2<-calcularSuperficie(alto,largo)*0.1;
+	
+	Escribir "La superficie del piso al colocar es de : ", m2;	
+	
+FinSubProceso
+
+SubProceso calcularPintura()
+	Definir superficie,litros como real;
+	Escribir " ingrese superficie";
+	Leer superficie;	
+	
+	litros<-superficie * 6;
+	
+	Escribir "La pintura necesaria es : ", litros, " litros";
+	
+FinSubProceso
+
+
+
+	

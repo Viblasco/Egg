@@ -9,7 +9,7 @@ Funcion recursiva <- suma(N)
 	SiNo
 		//La funcion se llama a si misma
 		recursiva <- suma (N -1)+ N;
-		
+	
 	FinSi
 		
 FinFuncion
