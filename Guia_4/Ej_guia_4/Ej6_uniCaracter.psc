@@ -8,6 +8,7 @@ Algoritmo Ej6_uniCaracter
 	Para i<-0 Hasta Longitud(text)-1 Hacer
 		vectorText[i]<-Subcadena(text,i,i);
 	Fin Para
+	
 	Escribir "Ingrese caracter para insertar";
 	leer car;
 	Escribir "Ingrese posicion  donde insertar el caracter";

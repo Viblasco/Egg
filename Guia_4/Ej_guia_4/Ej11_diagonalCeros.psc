@@ -7,7 +7,7 @@ SubProceso LlenarMatrizDiagonal(n,matriz por referencia)
 	Para i<-0 Hasta n-1 Hacer
 		Para j<-0 hasta n-1  Hacer
 			si j=i Entonces
-				matriz(i,j) = 0;
+				matriz(i,j) <- 0;
 			sino
 			     matriz(i,j)<- Aleatorio(-10,10);
              FinSi
@@ -22,9 +22,9 @@ SubProceso mostrarMAtriz(mat,n)
 	Para i<-0 Hasta n-1 Hacer
 		Para j<-0 hasta n-1 Hacer
 			Escribir Sin Saltar mat(i,j);
-			Escribir Sin Saltar " | "
+			Escribir Sin Saltar " | ";
 		FinPara
-		Escribir " "
+		Escribir " ";
 	FinPara 
 FinsubProceso
 

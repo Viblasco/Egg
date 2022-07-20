@@ -14,11 +14,12 @@ funcion rtaIguales<-iguales(vector1,vector2)
 			rtaiguales<-falso;
 		FinSi
 	FinPara
+	escribir "Que los arreglos son iguales es : ",rtaiguales;
 FinFuncion
 
 
-SubProceso llenarVectorAleatorio()
-	Definir vector1,vector2,i,n  como entero;
+SubProceso llenarVectorAleatorio(vector1 por referencia,vector2 por referencia)
+	
 	Escribir "Ingrese el tamaño del arreglo";
 	leer n;
 	dimension vector1[n];
@@ -35,10 +36,10 @@ FinSubProceso
 
 
 Algoritmo Ej7_arreglosIguales
+	Definir vector1,vector2  como entero;
 	definir respuesta como logico;
 	llenarVectorAleatorio();
 	
-	escribir "Que los arreglos son iguales es : ",respuesta;
 	
 	
 FinAlgoritmo

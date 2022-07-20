@@ -11,6 +11,7 @@
 //	F. Salir.
 //NOTA: El rango de los números aleatorios para los Vectores será de [-100 a 100]. La longitud
 //		para todos los vectores debe ser la misma, por lo tanto, esa información sólo se solicitará una 
+
 SubProceso llenarVectorAleatorio(n,vector por referencia)
 	Definir i como enteros
 	Para i<-0 Hasta n-1 Con Paso 1 Hacer
@@ -66,7 +67,7 @@ Algoritmo Ej4_MenuDEUsuario
 	salir=falso;
 	
 	
-	Repetir
+Repetir
 	EScribir " ";	
 	Escribir "**************************************************************************************";
 	Escribir "*                             Elija una opcion                                       *";
